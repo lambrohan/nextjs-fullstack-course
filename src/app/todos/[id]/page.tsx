@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { fakeTodos } from "@/lib/constants";
+import { getTodoById } from "@/lib/clients/api";
 import { ArrowLeft, CheckIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -18,9 +18,8 @@ export default async function SingleTodoPage({
     id: string;
   }>;
 }) {
-  const paramsObject = await params;
-  const id = Number(paramsObject.id);
-  const todo = fakeTodos.find((todo) => todo.id === id);
+  const { id } = await params;
+  const todo = await getTodoById(id);
   return (
     <div className="p-12">
       <Card>

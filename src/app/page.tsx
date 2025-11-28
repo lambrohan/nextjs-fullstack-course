@@ -1,9 +1,10 @@
 import { Card } from "@/components/ui/card";
-import { Todo } from "@/lib/constants";
+import { getTodos } from "@/lib/clients/api";
 import Link from "next/link";
+
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api/todos");
-  const todos: Array<Todo> = await res.json();
+  const todos = await getTodos();
+
   return (
     <div className="p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {todos.map((item) => (
