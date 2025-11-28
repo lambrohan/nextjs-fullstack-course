@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1764350791540,
+      "tag": "0000_public_beyonder",
+      "breakpoints": true
+    }
+  ]
+}
